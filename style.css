@@ -1,0 +1,240 @@
+/* General body and container styling */
+body {
+    font-family: 'Segoe UI', cursive, sans-serif;
+    background: linear-gradient(120deg, #FFC6FF 0%, #B5FFFF 100%);
+    color: #3C096C;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+/* Special background for page1 */
+body.page1 {
+    background: url("media/hello-kitty.gif") no-repeat center center fixed;
+    background-size: cover;
+}
+
+/* Glass container */
+.container {
+    background: rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    padding: 2.5em 3em;
+    border-radius: 20px;
+    box-shadow: 0 6px 18px rgba(60,9,108,0.12);
+    width: 90%;
+    max-width: 500px;
+    text-align: center;
+    animation: fadeIn 1.5s ease;
+}
+
+/* Glass container for page1 */
+.container.glass {
+    background: rgba(255, 255, 255, 0.25);
+    backdrop-filter: blur(12px) saturate(160%);
+    -webkit-backdrop-filter: blur(12px) saturate(160%);
+    border-radius: 20px;
+    padding: 2.5em 3em;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    color: #3C096C;
+}
+
+/* Headings */
+h1 {
+    font-size: 2.6em;
+    margin-bottom: 1rem;
+    animation: popIn 1s ease;
+}
+
+/* Buttons style */
+button {
+    padding: 1em 2.5em;
+    font-size: 1.2em;
+    margin: 1rem 0.8rem;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    color: #fff;
+    transition: background 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Cute Yes button */
+#yesBtn {
+    background: linear-gradient(135deg, #FF9CEE, #FDCB82);
+    box-shadow: 0 4px 12px rgba(255, 158, 238, 0.5);
+}
+
+#yesBtn:hover {
+    background: linear-gradient(135deg, #FFB6F0, #FFD194);
+    transform: scale(1.15);
+    box-shadow: 0 6px 16px rgba(255, 158, 238, 0.7);
+}
+
+/* Funny No button */
+#noBtn {
+    background: linear-gradient(135deg, #FF6F91, #FF9671);
+    box-shadow: 0 4px 12px rgba(255, 111, 145, 0.5);
+    position: relative;
+}
+
+#noBtn:hover {
+    background: linear-gradient(135deg, #FF8FA3, #FFB085);
+    transform: scale(1.05);
+    box-shadow: 0 6px 16px rgba(255, 111, 145, 0.7);
+}
+
+/* Gift button on page2 */
+#giftBtn {
+    background: #6a48aa;
+    width: 200px;
+    font-size: 1.3em;
+}
+
+#giftBtn:hover {
+    background: #7e63d7;
+    transform: scale(1.1);
+}
+
+/* Messages and photo container for page3 */
+#photoCanvas {
+    height: 250px;
+    margin-bottom: 20px;
+    border-radius: 15px;
+    background: #d9b9ff;
+    box-shadow: 0 0 15px rgba(122,0,255,0.3);
+}
+
+#messages {
+    font-size: 1.2em;
+    min-height: 50px;
+    margin-bottom: 15px;
+}
+
+/* Page 4 message */
+p {
+    font-size: 1.4em;
+    margin-top: 1em;
+}
+
+/* Back Button styling */
+#backBtn {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: rgba(0, 0, 0, 0.6);
+    font-size: 0.9em;
+    padding: 0.5em 1.2em;
+    border-radius: 20px;
+    cursor: pointer;
+    border: none;
+    color: #fff;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.2);
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+
+#backBtn:hover {
+    background: rgba(0, 0, 0, 0.8);
+    transform: scale(1.05);
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes popIn {
+    from { transform: scale(0.8); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+}
+/* Page 4: Vintage Letter with Scroll & Pixel Font */
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap'); /* Pixel font */
+
+/* Page 4 body */
+body.page4 {
+    background: #fdf0d5; /* parchment color */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    overflow: auto;
+    height: 100vh;
+}
+
+/* Vintage container */
+.container.vintage {
+    background: #fdf0d5; /* parchment */
+    border: 2px solid #d2b48c;
+    border-radius: 10px;
+    padding: 2em 1.5em;
+    width: 90%;
+    max-width: 600px;
+    text-align: left;
+    font-family: 'Press Start 2P', monospace; /* pixel font */
+    font-size: 12px; /* pixel-style size */
+    line-height: 1.6;
+    color: #5b4636;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+    background-image: url('media/indieground-vintagepaper-textures-05.jpg'); /* parchment texture */
+    background-size: cover;
+    background-repeat: no-repeat;
+    overflow-y: auto; /* vertical scroll for long text */
+    max-height: 80vh; /* limit height */
+    animation: fadeIn 1.5s ease;
+    padding-right: 10px; /* space for scrollbar */
+}
+
+/* Heading */
+.container.vintage h2 {
+    font-family: 'Press Start 2P', monospace; /* pixel heading */
+    text-align: center;
+    font-size: 16px;
+    margin-bottom: 20px;
+}
+
+/* Paragraph */
+.container.vintage p {
+    margin-bottom: 1em;
+    white-space: pre-wrap; /* keep line breaks */
+}
+
+/* Optional: custom scrollbar */
+.container.vintage::-webkit-scrollbar {
+    width: 8px;
+}
+
+.container.vintage::-webkit-scrollbar-thumb {
+    background-color: rgba(92, 64, 51, 0.7);
+    border-radius: 4px;
+}
+
+.container.vintage::-webkit-scrollbar-track {
+    background: rgba(255, 240, 213, 0.3);
+    border-radius: 4px;
+}
+/* Back Button for page 4 */
+body.page4 #backBtn {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: rgba(0, 0, 0, 0.6);
+    color: #fff;
+    border: none;
+    border-radius: 20px;
+    padding: 0.5em 1.2em;
+    font-size: 0.9em;
+    cursor: pointer;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.2);
+    transition: background 0.3s ease, transform 0.2s ease;
+    z-index: 10; /* ensures button stays above container */
+}
+
+body.page4 #backBtn:hover {
+    background: rgba(0, 0, 0, 0.8);
+    transform: scale(1.05);
+}

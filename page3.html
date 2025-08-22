@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+  <title>Birthday Page</title>
+
+  <!-- Pixel Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: black;
+      overflow: hidden;
+      font-family: 'Press Start 2P', cursive;
+      color: white;
+    }
+
+    /* Common strip style */
+    .strip {
+      display: flex;
+      width: 200%;
+      animation: moveLeft 30s linear infinite;
+    }
+
+    .strip.reverse {
+      animation: moveRight 30s linear infinite;
+    }
+
+    .strip img {
+      width: 220px;       /* bigger for portrait look */
+      height: 300px;
+      object-fit: cover;
+      margin: 6px;
+      border-radius: 6px;
+      box-shadow: 0 0 8px rgba(255,255,255,0.5);
+    }
+
+    /* Top and bottom strips */
+    .rail {
+      position: absolute;
+      left: 0;
+      width: 100%;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+    }
+    .rail.top { top: 5%; }       /* moved much higher */
+    .rail.bottom { bottom: 5%; } /* moved much lower */
+
+    @keyframes moveLeft {
+      0%   { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+    @keyframes moveRight {
+      0%   { transform: translateX(-50%); }
+      100% { transform: translateX(0); }
+    }
+
+    /* Pixelated rail line */
+    .rail-line {
+      height: 10px;
+      background-image: repeating-linear-gradient(
+        to right,
+        #fff 0 8px,
+        transparent 8px 16px
+      );
+      image-rendering: pixelated;
+    }
+
+    /* Glass circle in center */
+    .glass-circle {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 360px;
+      height: 360px;
+      border-radius: 50%;
+      backdrop-filter: blur(12px);
+      background: rgba(255, 255, 255, 0.08);
+      border: 3px solid rgba(255, 255, 255, 0.3);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      z-index: 10;
+      padding: 20px;
+      box-shadow: 0 0 25px rgba(255,255,255,0.5);
+    }
+
+    .glass-circle h1 {
+      font-size: 16px;
+      line-height: 1.6em;
+      color: #ff66cc;
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.7);
+    }
+
+    .read-more {
+      margin-top: 20px;
+      font-size: 12px;
+      color: #fff;
+      text-decoration: underline;
+      cursor: pointer;
+    }
+
+    .read-more:hover {
+      color: #ff66cc;
+    }
+  </style>
+</head>
+<body>
+  <!-- Top Rail -->
+  <div class="rail top">
+    <div class="rail-line"></div>
+    <div class="strip">
+      <img src="media/img1.jpg">
+      <img src="media/img2.jpg">
+      <img src="media/img3.jpg">
+      <img src="media/img4.jpg">
+      <img src="media/img5.jpg">
+      <img src="media/img6.jpg">
+      <img src="media/img7.jpg">
+      <img src="media/img8.jpg">
+      <img src="media/img9.jpg">
+      <img src="media/img10.jpg">
+      <!-- repeat for infinite effect -->
+      <img src="media/img1.jpg">
+      <img src="media/img2.jpg">
+      <img src="media/img3.jpg">
+    </div>
+    <div class="rail-line"></div>
+  </div>
+
+  <!-- Bottom Rail -->
+  <div class="rail bottom">
+    <div class="rail-line"></div>
+    <div class="strip reverse">
+      <img src="media/img3.jpg">
+      <img src="media/img2.jpg">
+      <img src="media/img1.jpg">
+      <img src="media/img4.jpg">
+      <img src="media/img6.jpg">
+      <img src="media/img2.jpg">
+      <img src="media/img8.jpg">
+      <img src="media/img7.jpg">
+      <img src="media/img3.jpg">
+      <img src="media/img1.jpg">
+      <!-- repeat for infinite effect -->
+      <img src="media/img3.jpg">
+      <img src="media/img2.jpg">
+      <img src="media/img1.jpg">
+    </div>
+    <div class="rail-line"></div>
+  </div>
+
+  <!-- Center message -->
+  <div class="glass-circle">
+    <h1>HAPPIEST BIRTHDAY<br>GK ❤️</h1>
+    <div class="read-more" onclick="window.location.href='page4.html'">Read More...</div>
+  </div>
+</body>
+</html>
